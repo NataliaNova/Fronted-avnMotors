@@ -1,0 +1,142 @@
+<p>registar-cliente works!</p>
+<div class="container mb-5 py-5">
+  <div class="row">
+    <div class="col-md-10 mx-auto my-5">
+      <div class="card">
+        <div class="card-header bg-warning text-center text-white">
+          <h1><i class="bi bi-person-circle"></i> Registrar Cliente</h1>
+        </div>
+
+        <div class="card-body">
+          <form [formGroup]="formValue">
+            <div class="row">
+              <div *ngIf="mensajeOk">
+                <div
+                  class="alert alert-success alert-dismissible fade show"
+                  role="alert"
+                >
+                  <strong>{{ mensajeOk }}</strong>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close"
+                  ></button>
+                </div>
+              </div>
+
+              <div *ngIf="mensajeError">
+                <div
+                  class="alert alert-danger alert-dismissible fade show"
+                  role="alert"
+                >
+                  <strong>{{ mensajeError }}</strong>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close"
+                  ></button>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label>Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="nombres"
+                  placeholder="Ingresa tus nombres"
+                  formControlName="nombres"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label>Apellidos</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="apellidos"
+                  placeholder="Ingresa tus apellidos"
+                  formControlName="apellidos"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label>Documento</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="cedula"
+                  placeholder="Ingresa tu número de documento"
+                  formControlName="documento"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label>Teléfono</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="cargo"
+                  placeholder="Ingresa tu número de contacto"
+                  formControlName="telefono"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label>Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="correo"
+                  placeholder="Ingresa tu Email"
+                  formControlName="email"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <label>Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="tipoContrato"
+                  placeholder="Ingresa tu contraseña"
+                  formControlName="contrasena"
+                />
+              </div>
+              <div class="col-md-6">
+                <label>Rol</label>
+                <select class="form-control" formControlName="rol">
+                  <option value="" selected>Selecciona</option>
+                  <option *ngFor="let item of rol" value="{{ item }}">
+                    {{ item }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label>Placas</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="placa"
+                  placeholder="Ingresa la placa de tu vehiculo"
+                  formControlName="placas"
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-outline-info my-3"
+              (click)="crearCliente()"
+            >
+              <i class="bi bi-person-plus-fill"></i> Crear usuario
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

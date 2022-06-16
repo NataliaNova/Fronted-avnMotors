@@ -1,0 +1,190 @@
+<section class="vh-100" style="background-color: #191919">
+  <app-barra></app-barra>
+  <div class="container">
+    <div class="row">
+      <div class="container-fluid">
+        <h1 class="header-title display-1 text-light text-center">
+          Registra tus productos
+        </h1>
+        <hr />
+        <div class="row">
+          <div class="col-12 col-lg-12" *ngIf="error_message">
+            <div
+              class="alert alert-danger alert-dismissible fade show"
+              role="alert"
+            >
+              <h5>{{ error_message }}</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+          <div class="col-12 col-lg-12" *ngIf="success_message">
+            <div
+              class="alert alert-success alert-dismissible fade show"
+              role="alert"
+            >
+              <h5>{{ success_message }}</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+          </div>
+          <div class="col-12 col-xl-12">
+            <div class="card bg-dark">
+              <div class="card-header">
+                <h5 class="card-title text-warning text-center">
+                  Completa los datos del formulario
+                </h5>
+
+                <!-- Nueevo -->
+                <form
+                  #productoForm="ngForm"
+                  (ngSubmit)="onSubmit(productoForm)"
+                >
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label class="form-label text-light"
+                          >Nombre del producto</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          maxlength="30"
+                          placeholder="Ingresa el nombre del producto"
+                          #titulo="ngModel"
+                          name="nombre"
+                          [(ngModel)]="productoModel.nombre"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group text-light">
+                        <label class="form-label">Marca</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          maxlength="20"
+                          placeholder="Ingresa la marca del producto"
+                          #precio_compra="ngModel"
+                          name="marca"
+                          [(ngModel)]="productoModel.marca"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="form-label text-light">Descripción</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          maxlength="70"
+                          placeholder="Ingresa una breve descripción del producto"
+                          #precio_venta="ngModel"
+                          name="descripcion"
+                          [(ngModel)]="productoModel.descripcion"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6 my-5">
+                      <div class="card">
+                        <div class="card-header">
+                          Carga la imagen del producto
+                        </div>
+                        <!-- <div class="card-body">
+                            <div class="text-center">
+                                <img src="../../../../assets/img/default.jpg" alt="Imagen" class="rounded-circle img-responsive mt-2" width="128" height="128">
+                                <div class="mt-2">
+                                    <input class="btn btn-primary" [(ngModel)]="imagenUrl" required type="text" style="width: 100% !important;">
+                                </div>
+                                <small>Debe importar el link de internet</small>
+                            </div>
+                        </div> -->
+                        <div class="card-body">
+                          <div class="text-center">
+                            <img
+                              alt="Chris Wood"
+                              [src]="
+                                imgSelect ||
+                                '../../../../assets/img/Screenshot_1.png'
+                              "
+                              class="img-responsive mt-2"
+                              width="128"
+                              height="128"
+                            />
+                            <div class="mt-2">
+                              <input
+                                class="btn btn-dark"
+                                [(ngModel)]="imagenUrl"
+                                (change)="seleccionarImagen($event)"
+                                type="file"
+                                style="width: 100% !important"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 my-4">
+                      <label class="form-label text-light"
+                        >Precio de Compra</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="$0"
+                        #stock="ngModel"
+                        name="precio_compra"
+                        [(ngModel)]="productoModel.precio_compra"
+                        required
+                      />
+
+                      <label class="form-label text-light"
+                        >Precio de Venta</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="$0"
+                        #stock="ngModel"
+                        name="precio_venta"
+                        [(ngModel)]="productoModel.precio_venta"
+                        required
+                      />
+
+                      <label class="form-label text-light">Cantidad</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="0"
+                        #stock="ngModel"
+                        name="cantidad"
+                        [(ngModel)]="productoModel.cantidad"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-warning my-2">
+                    Registrar Producto
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="vh-100" style="background-color: #191919"></section>

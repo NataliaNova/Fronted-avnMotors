@@ -1,0 +1,98 @@
+<app-barra></app-barra>
+
+<div class="container mt-5 bg-transparent pb-2 contenedor-ventana">
+  <div class="text-center fs-1 text-light my-5">
+    Déjanos tus dudas y pronto te las resolveremos
+  </div>
+
+  <form [formGroup]="formValue">
+    <div class="fs-3 text-light my-2">Datos Generales</div>
+
+    <div class="row pb-5">
+      <div class="col-12 col-md-6">
+        <!-- Nombres -->
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Tus nombres"
+            style="width: calc(100%)"
+            formControlName="nombresCapturaContacto"
+          />
+          <label for="floatingInput text-light">Nombres</label>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <!-- Apellidos -->
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="Tus apellidos"
+            style="width: calc(100%)"
+            formControlName="apellidosCapturaContacto"
+          />
+          <label for="floatingInput text-light">Apellidos</label>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <!-- Correo -->
+        <div class="form-floating mb-3">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            style="width: calc(100%)"
+            formControlName="correoCapturaContacto"
+          />
+          <label for="floatingInput text-light">Correo</label>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <!-- Telefono -->
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+            style="width: calc(100%)"
+            formControlName="telefonoCapturaContacto"
+          />
+          <label for="floatingInput text-light">Teléfono</label>
+        </div>
+      </div>
+
+      <!-- Comentario -->
+      <div class="form-floating">
+        <textarea
+          class="form-control"
+          placeholder="Dejanos tus comentarios"
+          id="floatingTextarea2"
+          style="height: 100px"
+          formControlName="comentarioCapturaContacto"
+        ></textarea>
+        <label for="floatingTextarea2">Comentarios</label>
+      </div>
+
+      <div>
+        <!-- Btn -->
+        <button
+          (click)="enviar()"
+          type="submit"
+          class="btn btn-warning my-3"
+          style="width: calc(100%)"
+        >
+          Enviar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,101 @@
+<section class="vh-100" style="background-color: #191919">
+    <app-barra></app-barra>
+    <div class="container my-2">
+        <div class="container-fluid">
+            <div class="header">
+                <h1 class="header-title display-1 text-light text-center">
+                    Registra tus Servicios
+                </h1>
+                <hr />
+            </div>
+
+            <!--containers-->
+
+            <div class="row">
+                <div class="col-12 col-lg-12" *ngIf="error_message">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <h5>{{ error_message }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-12" *ngIf="success_message">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <h5>{{ success_message }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-8">
+                    <div class="card bg-dark">
+                        <div class="card-header">
+                            <h5 class="card-title text-warning text-center">
+                                Completa los datos del formulario
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <!--formulario-->
+
+                            <form #servicioForm="ngForm" (ngSubmit)="onSubmit(servicioForm)">
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-label text-light">Nombre del Servicio</label>
+                                            <input type="text" class="form-control" placeholder="nombre del servicio" #titulo="ngModel" name="nombre" [(ngModel)]="servicioModel.nombre" required />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-label text-light">Descripción</label>
+                                            <input type="text" class="form-control" placeholder=" " #precio_venta="ngModel" name="descripcion" [(ngModel)]="servicioModel.descripcion" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label class="form-label text-light">Tiempo </label>
+                                        <input type="number" class="form-control" placeholder="0" #stock="ngModel" name="tiempoEstimado" [(ngModel)]="servicioModel.tiempoEstimado" required />
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label class="form-label text-light">Precio </label>
+                                        <input type="number" class="form-control" placeholder="$0" #stock="ngModel" name="precio" [(ngModel)]="servicioModel.precio" required />
+                                    </div>
+
+                                </div>
+                                <br>
+                                <br>
+                                <button type="submit" class="btn btn-primary my-2">Registrar</button>
+                            </form>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="card bg-dark">
+                        <h5 class="card-title text-warning text-center">
+                            Carga la imagen del Servicio
+                        </h5>
+                        <div class="card-header text-light">Seleccione la imagen</div>
+
+                        <div class="card-body">
+                            <!-- esta es la configuración para las imagenes -->
+                            <div class="text-center">
+                                <img alt="Chris Wood" [src]="imgSelect || '../../../../assets/img/Screenshot_1.png'" class="rounded-circle img-responsive mt-2" width="128" height="128" />
+                                <div class="mt-2">
+                                    <input class="btn btn-primary" [(ngModel)]="imagenUrl" (change)="seleccionarImagen($event)" type="file" style="width: 100% !important" />
+                                </div>
+                                <small>For best results, use an image at least 128px by 128px in .jpg
+            format</small
+          >
+        </div>
+      </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="vh-100" style="background-color: #191919"></section>
+  
+  <!-- Nueevo -->

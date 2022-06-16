@@ -1,0 +1,61 @@
+<app-barra></app-barra>
+<section class="vh-100" style="background-color: #191919">
+  <div class="container">
+    <div class="row">
+      <h1 class="display-2 text-center text-warning">
+        Descubre los productos que tenemos para ti
+      </h1>
+      <div class="col-sm-4 p-1" *ngFor="let item of dataProductos">
+        <div class="card bg-dark bg-opacity-25" style="width: 18rem">
+          <img
+            class="imgCartas"
+            width="280"
+            height="300"
+            [src]="base_url + 'producto/producto/img/' + item.imagen"
+            alt="Avatar"
+          />
+
+          <div class="card-body">
+            <h5 class="card-title text-warning">{{ item.nombre }}</h5>
+            <p class="card-text text-light">{{ item.descripcion }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-dark bg-opacity-25 text-light">
+              Frabricado por: {{ item.marca }}
+            </li>
+            <li class="list-group-item bg-dark bg-opacity-25 text-light">
+              Por tan solo: {{ item.precio_venta }}
+            </li>
+          </ul>
+          <div class="card-body">
+            <button
+              *ngIf="rol == 'Admin'"
+              class="btn btn-info me-1 my-1"
+              style="width: 78px !important"
+              routerLink="/productoEditar/{{ item._id }}"
+            >
+              Editar
+            </button>
+
+            <button
+              *ngIf="rol == 'Admin'"
+              class="btn btn-danger me-1 my-1"
+              style="width: 78px !important"
+              type=""
+              (click)="eliminarProducto2(item)"
+            >
+              Borrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning me-1 my-1"
+              (click)="comprarProducto()"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

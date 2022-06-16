@@ -1,0 +1,29 @@
+<app-barra></app-barra>
+<section class="vh-100" style="background-color: #191919">
+  <div class="container">
+    <div class="row">
+      <h2 class="header-title display-2 text-light text-center">
+        Servicios para agendar
+      </h2>
+      <br /><br />
+      <div class="col-sm-4 my-2" *ngFor="let item of dataServicios">
+        <div class="card bg-dark bg-opacity-25" style="width: 18rem">
+          <!--  <img [src]=" base_url +'servicios/servicios/img/'+ item.imagen" alt="Avatar" /> -->
+
+          <div class="card-body">
+            <h5 class="card-title text-warning">{{ item.nombre }}</h5>
+            <p class="card-text text-light">{{ item.descripcion }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-dark bg-opacity-25 text-light">
+              Tiempo Estimado :{{ item.tiempoEstimado }} minutos
+            </li>
+            <li class="list-group-item bg-dark bg-opacity-25 text-light">
+              Costo: $ {{ item.precio }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

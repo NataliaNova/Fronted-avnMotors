@@ -1,0 +1,187 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-warning" routerLink="/inicio">
+      <i class="bi bi-tools"></i> avnMotors</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/agendamiento"
+            ><i class="bi bi-calendar-check"></i> Agenda tu cita</a
+          >
+        </li>
+        <!-- <li class="nav-item dropdown">
+          <a
+            class="nav-link active dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-box-seam px-2"></i>Servicios
+          </a>
+          <ul
+            class="dropdown-menu bg-dark"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <li *ngIf="rol == 'Admin'">
+              <a class="dropdown-item text-light" routerLink="/servicioEditar">
+                Actualizar Servicios</a
+              >
+            </li>
+            <li *ngIf="rol == 'Admin'">
+              <a class="dropdown-item text-light" routerLink="/servicioCrear">
+                Registar Servicios</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item text-light" routerLink="/servicioInicio">
+                Ver Servicios</a
+              >
+            </li>
+          </ul>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a
+            class="nav-link active dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-box-seam px-2"></i>Servicios
+          </a>
+          <ul
+            class="dropdown-menu bg-dark"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <li *ngIf="rol == 'Admin'">
+              <a class="dropdown-item text-light" routerLink="/servicioEditar">
+                Actualizar Servicios</a
+              >
+            </li>
+            <li *ngIf="rol == 'Admin'">
+              <a class="dropdown-item text-light" routerLink="/servicioCrear">
+                Registar Servicios</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item text-light" routerLink="/servicioInicio">
+                Ver Servicios</a
+              >
+            </li>
+          </ul>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link active dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-box-seam px-2"></i>Servicios
+          </a>
+          <ul
+            class="dropdown-menu bg-dark"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <!-- <li *ngIf="rol == 'Admin'">
+              <a class="dropdown-item text-light" routerLink="/servicioEditar">
+                Actualizar Servicios</a
+              >
+            </li> -->
+            <li *ngIf="rol == 'Admin'">
+              <a class="dropdown-item text-light" routerLink="/servicioCrear">
+                Registar Servicios</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item text-light" routerLink="/servicioInicio">
+                Ver Servicios</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link active dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-box-seam px-2"></i>Productos
+          </a>
+          <ul
+            class="dropdown-menu bg-dark"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <li *ngIf="rol == 'Admin'">
+              <a class="dropdown-item text-light" routerLink="/productoCrear">
+                Registar Productos</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item text-light" routerLink="/productoInicio">
+                Ver Productos</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/contacto">
+            <i class="bi bi-chat-dots"></i> Contáctanos</a
+          >
+        </li>
+      </ul>
+      <div class="position-absolute bottom-0 end-0">
+        <button
+          *ngIf="!token"
+          class="btn btn-link text-warning"
+          type="submit"
+          routerLink="/registrarCliente"
+        >
+          | Registrate |
+        </button>
+
+        <button
+          *ngIf="!token"
+          class="btn btn-link text-warning"
+          type="submit"
+          routerLink="/login"
+        >
+          <i class="bi bi-person"></i>
+          Mi cuenta
+        </button>
+
+        <button
+          *ngIf="token"
+          type="button"
+          class="btn btn-dark text-danger"
+          (click)="cerrarSesion()"
+        >
+          <i class="bi bi-person-x"></i> Cerrar Sesión
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
